@@ -1,0 +1,593 @@
+/* 필터 오픈 */
+.filterOpenner {
+  width: 58px;
+  height: 55px;
+  top: 90vh;
+  left: 3vw;
+  box-shadow: 0 6px 17px 0 rgb(0 0 0 / 10%);
+  background-color: #01d28e;
+  border-radius: 100%;
+  position: fixed;
+  padding: 9px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  animation: float 1s ease infinite;
+  transition: 0.2s ease-in-out;
+  display: block;
+  z-index: 99;
+}
+
+.filterOpenner:hover {
+  opacity: 0.6;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.filterContainer {
+  float: left;
+  width: 0;
+  /* width: 220px; */
+  height: 600px;
+  position: sticky;
+  top: 100px;
+  /* left: 1vw; */
+  /* border: 0px 5px 12px -1px rgb(0 0 0 / 6%); */
+  box-shadow: 0 6px 17px 0 rgb(0 0 0 / 10%);
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background-color: #fff;
+  padding: 0;
+  /* padding: 15px; */
+  margin-left: 10px;
+  overflow: auto;
+  direction: rtl;
+  /* display: none; */
+  transition: 0.2s ease-in-out;
+}
+
+/* 필터 검색란 스크롤바 */
+.filterContainer::-webkit-scrollbar {
+  width: 7px;
+}
+.filterContainer::-webkit-scrollbar-thumb {
+  background-color: #1089ff;
+  border-radius: 10px;
+}
+.filterContainer::-webkit-scrollbar-track {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+/* 필터 검색란  */
+.filterBox {
+  width: 100%;
+  max-height: 300px;
+  font-size: 12px;
+  margin: 10px 0;
+  direction: ltr;
+  transition: max-height 0.25s ease-in-out;
+}
+/* 필터 펼치기 */
+.hideFilter {
+  max-height: 27px;
+  overflow: hidden;
+}
+
+.filterBoxTitle {
+  font-size: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.filterBoxTitle:hover {
+  opacity: 0.6;
+}
+
+.filterBoxTitle > label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+}
+
+.openArrow {
+  width: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.openArrow > img {
+  width: 100%;
+  height: auto;
+}
+
+.filterCloser {
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.filterCloser:hover {
+  opacity: 0.6;
+  color: #e5e5e5;
+}
+
+.filterTitle {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+/* .filterMark:before {
+  margin-left: 5px;
+  content: "\E616";
+} */
+
+/* 연식, 연료, 주행거리, 가격 검색 */
+.filterBox > select {
+  width: 73px;
+  height: 31px;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  border: 1px solid #000;
+  border-radius: 3px;
+}
+
+.filterBox > select > option {
+  padding: 3px 0;
+  /* color: #fff; */
+  font-weight: bold;
+  /* background: #1089ff; */
+}
+
+.filterBox > label {
+  color: #000;
+  font-weight: bold;
+}
+
+.filterBox > .between {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 5px;
+}
+
+/* 지역, 연료 검색 */
+#regionFilter,
+#fuelFilter {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#fuelFilter > li,
+#regionFilter > li {
+  width: 33%;
+}
+
+#regionFilter input[type="checkbox"],
+#fuelFilter input[type="checkbox"] {
+  display: none;
+}
+.fuel,
+.region {
+  width: 90%;
+  padding: 0 10px;
+  line-height: 30px;
+  /* font-size: 12px; */
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.fuel:hover,
+.region:hover {
+  color: #000;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+/* 검색 버튼 */
+.filterBtn {
+  background-color: #1089ff;
+  border: 1px solid #1089ff;
+}
+/* 초기화 버튼 */
+.intializeBtn {
+  background-color: #01d28e;
+  border: 1px solid #01d28e;
+}
+
+.filterBtn,
+.intializeBtn {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  outline: none !important;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.filterBtn:hover,
+.intializeBtn:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/* 필터 검색란 미디어 쿼리 */
+@media (max-width: 1024px) {
+  .filterContainer {
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
+
+/* ------------------- 찜목록 -------------------*/
+/* 찜목록 오픈 */
+.cartOpenner {
+  width: 58px;
+  height: 55px;
+  top: 90vh;
+  /* left: 92vw; */
+  right: 3.2vh;
+  box-shadow: 0 6px 17px 0 rgb(0 0 0 / 10%);
+  background-color: #1089ff;
+  border-radius: 100%;
+  position: fixed;
+  padding: 9px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  animation: float 1s ease infinite;
+  transition: 0.2s ease-in-out;
+  display: block;
+  z-index: 99;
+}
+.cartOpenner:hover {
+  opacity: 0.6;
+}
+
+.cartContainer {
+  width: 0;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  /* border: 0px 5px 12px -1px rgb(0 0 0 / 6%); */
+  box-shadow: 0 6px 17px 0 rgb(0 0 0 / 10%);
+  /* border-top-left-radius: 25px; */
+  /* border-bottom-left-radius: 25px; */
+  border-radius: 25px;
+  background-color: #fff;
+  padding: 0;
+  /* overflow: auto; */
+  transition: 0.2s ease-in-out;
+  z-index: 200;
+}
+.cartTitle {
+  padding: 0 10px;
+  overflow: hidden;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.scrollAttach {
+  height: 600px;
+  overflow: auto;
+}
+
+/*  필터 검색, 찜목록 스크롤바 */
+.scrollAttach::-webkit-scrollbar {
+  width: 7px;
+}
+.scrollAttach::-webkit-scrollbar-thumb {
+  background-color: #1089ff;
+  border-radius: 10px;
+}
+.scrollAttach::-webkit-scrollbar-track {
+  background-color: lightblue;
+  border-radius: 10px;
+  box-shadow: inset 0px 0px 5px white;
+}
+
+/* 범위 슬라이드 */
+.slideContainer {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.slider-labels {
+  color: #000;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Functional styling;
+   * These styles are required for noUiSlider to function.
+   * You don't need to change these rules to apply your design.
+   */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+  direction: ltr;
+}
+
+.noUi-base {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  /* Fix 401 */
+}
+
+.noUi-origin {
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.noUi-handle {
+  position: relative;
+  z-index: 1;
+}
+
+.noUi-stacking .noUi-handle {
+  /* This class is applied to the lower origin when
+     its values is > 50%. */
+  z-index: 10;
+}
+
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: left 0.3s, top 0.3s;
+  transition: left 0.3s, top 0.3s;
+}
+
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Painting and performance;
+   * Browsers can paint handles in their own layer.
+   */
+.noUi-base,
+.noUi-handle {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Slider size and handle placement;
+   */
+.noUi-horizontal {
+  height: 4px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: -7px;
+  top: -7px;
+  background-color: #1089ff;
+  cursor: pointer;
+}
+
+/* Styling;
+   */
+.noUi-background {
+  background: #d6d7d9;
+  cursor: pointer;
+}
+
+.noUi-connect {
+  background: #1089ff;
+  -webkit-transition: background 450ms;
+  transition: background 450ms;
+}
+
+.noUi-origin {
+  border-radius: 2px;
+}
+
+.noUi-target {
+  border-radius: 2px;
+}
+
+.noUi-target.noUi-connect {
+}
+
+/* Handles and cursors;
+   */
+.noUi-draggable {
+  cursor: w-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+  cursor: n-resize;
+}
+
+.noUi-handle {
+  cursor: default;
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+  box-sizing: content-box !important;
+}
+
+.noUi-handle:active {
+  border: 8px solid #345dbb;
+  border: 8px solid rgba(53, 93, 187, 0.38);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  left: -14px;
+  top: -14px;
+}
+
+/* Disabled state;
+   */
+[disabled].noUi-connect,
+[disabled] .noUi-connect {
+  background: #b8b8b8;
+}
+
+[disabled].noUi-origin,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* ------------- */
+
+/* 더보기(view more) 버튼 */
+.moreContent {
+  width: 200px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1089ff;
+  border-radius: 5px;
+  border: 1px solid #1089ff;
+  outline: none !important;
+  /* transition: 0.2s ease-in-out; */
+  animation: light 0.3s infinite alternate;
+}
+
+/* .moreContent:hover {
+  opacity: 0.7;
+} */
+
+@keyframes light {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.7;
+  }
+}
+/* ------------- */
+
+/* 찜목록 상품 */
+.cartItem {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.itemPhoto {
+  width: 120px;
+  height: 120px;
+  background-color: gray;
+}
+
+.itemInfo > .itemTitle {
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+/*
+.itemInfo > .itemTitle::after {
+  content: "X";
+  margin-left: 35px;
+  color: gray;
+}
+*/
+.itemInfo > span {
+  color: #000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.itemInfo > span:last-child {
+  font-weight: bold;
+}
+
+.totalPrice {
+  padding: 0 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+.totalPrice > span {
+  margin-right: 90px;
+}
+
+.cartBtn {
+  padding: 0 20px;
+}
+
+.cartBtn > button {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.2s ease-in-out;
+}
+
+.cartBtn > button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.cartBtn > button:first-child {
+  background-color: #1089ff;
+  border: 1px solid #1089ff;
+}
+
+.cartBtn > button:last-child {
+  background-color: #01d28e;
+  border: 1px solid #01d28e;
+}
+
+/* 찜목록 미디어쿼리 */
+@media (max-height: 678px) {
+  .cartContainer {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  .scrollAttach {
+    height: 90%;
+    overflow: auto;
+  }
+}

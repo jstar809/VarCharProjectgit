@@ -1,0 +1,55 @@
+.mainService {
+  padding: 5rem 4rem;
+}
+
+.mainServiceMsg {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 0 0;
+}
+
+.mainFilterTitle {
+  margin-bottom: 20px;
+}
+
+.mainFilterBox {
+  width: 100%;
+}
+
+.form-group > .label {
+  font-size: 12px !important;
+  font-weight: bold !important;
+}
+.form-control {
+  font-weight: bold;
+}
+
+.form-control > option {
+  color: #000;
+  font-size: 12px;
+  font-weight: 540;
+  /* padding: 20px 0; */
+}
+
+.mainFilterBtn {
+  font-weight: bold;
+  margin-top: 10px;
+  transition: 0.1s;
+}
+
+.mainFilterBtn:hover {
+  opacity: 0.6;
+  background-color: lightgreen;
+}
+
+.mainFuelFilter,
+.mainRegionFilter {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767.99px) {
+  .mainServiceMsg {
+    display: flex;
+    justify-content: center;
+  }
+}

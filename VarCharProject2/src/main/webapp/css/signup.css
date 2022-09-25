@@ -1,0 +1,319 @@
+html {
+  min-width: 681px;
+}
+
+.joinbox {
+  display: flex;
+  justify-content: center;
+}
+
+#signupContainer {
+  width: 700px;
+  height: 1750px;
+  padding: 50px;
+  margin: 50px 0;
+  box-shadow: 0 6px 17px 0 rgb(0 0 0 / 10%);
+}
+
+#headerbox {
+  background-color: #f5f5f5;
+}
+#inputbox {
+  width: 100%;
+  margin-bottom: 30px;
+}
+#idboxtop,
+#emailboxtop {
+  margin-bottom: 10px;
+}
+#pwboxtop {
+  margin-bottom: 10px;
+}
+
+.checkPwLabel {
+  margin-top: 30px;
+}
+
+#myinfock {
+  margin-bottom: 10px;
+}
+.warnbox {
+  display: none;
+  width: 100%;
+  padding-top: 6px;
+  font-size: 14px;
+  color: #ff5c46;
+}
+/* 간편회원가입 */
+#jointitle {
+  width: 100%;
+  padding: 8rem 0 3rem;
+  background: #ffc72c;
+  margin-bottom: 6vh;
+}
+#jointitle1 {
+  width: 40%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* 이메일 부분 */
+#idboxtop,
+#emailboxtop {
+  width: 100%;
+  display: flex;
+}
+/* 이메일 적는 곳 */
+#emailinput {
+  width: 100%;
+  font-size: 17px;
+}
+
+#idinput {
+  width: 85%;
+  margin-right: 10px;
+}
+
+#idselect,
+#emailselect {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border: 2px solid #e9ecef;
+  border-radius: 3px;
+}
+#idboxbottom,
+#emailboxbottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* 안내문구 */
+
+#idboxbottomleft,
+#emailboxbottomleft {
+  width: 80%;
+  height: 50px;
+  line-height: 50px;
+  text-align: left;
+  color: #4567ad;
+  font-weight: bold;
+}
+/* 이메일 중복확인 */
+#idboxbottomright,
+#emailboxbottomright {
+  width: 19%;
+  height: 50px;
+  background-color: #01d28e;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+
+#idboxbottomright:hover,
+#emailboxbottomright:hover {
+  opacity: 0.6;
+}
+
+/* 폰 박스 */
+#phonebox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#phoneboxleft {
+  width: 68%;
+}
+/* 인증번호 발송 */
+#phoneboxright {
+  width: 30%;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #01d28e;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+}
+#phoneboxright:hover {
+  opacity: 0.6;
+}
+
+/* 생일박스 */
+#birthbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#birthboxleft {
+  width: 68%;
+}
+#birthboxright {
+  width: 30%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-right: 20px;
+}
+#birthboxright > span {
+  font-size: 17px;
+  color: #495057;
+}
+/* 성별 */
+.genderbox {
+  width: 30%;
+  border: 1px solid #ddd;
+}
+/* 생년월일 */
+.yearbox {
+  padding-right: 10px;
+}
+.yearboxcheck {
+  border: 1px solid #ddd;
+}
+.btn_infomore {
+  width: 15px;
+  height: 15px;
+  background-image: url(../img/hiddenarrow.jpg);
+  background-position: 0 16px;
+  background-size: 15px;
+  border: none;
+  background-color: #ffffff;
+}
+.btn_infomoretoggle {
+  width: 15px;
+  height: 12px;
+  background-image: url(../img/hiddenarrow.jpg);
+  background-position: 0 0;
+  background-size: 15px;
+  border: none;
+  background-color: #ffffff;
+}
+.btn_infomore:hover {
+  border: none;
+}
+
+.hiddenbox {
+  position: relative;
+  padding: 20px 8px;
+  margin-bottom: 15px;
+  background: #f3f3f3;
+  border-radius: 5px;
+  display: none;
+}
+.on {
+  display: block !important;
+}
+.off {
+  display: none;
+}
+.hiddenboxul {
+  padding-right: 40px;
+}
+.hiddenboxul li {
+  position: relative;
+  display: table;
+  margin-top: 6px;
+  padding-left: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #495057;
+}
+.hiddenboxul li:before {
+  position: absolute;
+  top: 9px;
+  left: 0;
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #bbb;
+}
+/* 약관 동의박스 */
+#agreeboxtop {
+  position: relative;
+  display: flex;
+  color: #000;
+  font-weight: bold;
+  margin-block: 10px;
+}
+#agreeboxtop > span {
+  margin-right: 10px;
+}
+/* 체크박스 편집(수정필요함) */
+.agreeck {
+  display: none;
+}
+.agreeck + label {
+  cursor: pointer;
+}
+.agreeck + label::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 17px;
+  border: 1px solid #cbcbcb;
+  vertical-align: middle;
+}
+.agreeck:checked + label::before {
+  content: "💛";
+  font-weight: 900;
+  font-size: 11px;
+  text-align: center;
+}
+
+.agreelabel {
+  padding-left: 20px;
+}
+
+#agreeboxbottom {
+  position: relative;
+  border: 2px solid #e9ecef;
+  border-radius: 5px;
+  color: #555;
+  font-weight: bold;
+}
+#agreeul {
+  padding: 20px 20px 0 0;
+}
+.agreeli {
+  position: relative;
+  list-style: none;
+}
+.agreeli > .agreespan {
+  float: right;
+}
+#agreelibottom {
+  position: relative;
+  padding-left: 30px;
+}
+.checkboxbottom {
+  position: absolute;
+  border: 1px solid #555;
+  width: 18px;
+  height: 18px;
+}
+/* 가입완료 */
+#submitbox {
+  width: 100%;
+  height: 100px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1089ff;
+  border: 1px solid #1089ff;
+  border-radius: 5px;
+  outline: none;
+  margin-top: 15px;
+}
